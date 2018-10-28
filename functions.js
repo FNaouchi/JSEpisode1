@@ -5,7 +5,11 @@
  * - logs "Hello <name>" if there is a name
  */
 function greet(name) {
-  // Your code here
+  if (name) {
+    console.log(`Hello ${name}`);
+  } else {
+    console.log(`Hello`);
+  }
 }
 
 /**
@@ -14,7 +18,11 @@ function greet(name) {
  * - returns true if it's odd, false otherwise
  */
 function isOdd(n) {
-  // Your code here
+  if (n % 2 === 1) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -29,7 +37,11 @@ function isOdd(n) {
  * Hint: you can solve this without writing any loops!
  */
 function oddsSmallerThan(n) {
-  // Your code here
+  if (n % 2 === 1 && n != 1) {
+    return n - 2;
+  } else if (n === 1) {
+    return 0;
+  }
 }
 
 /**
@@ -43,7 +55,11 @@ function oddsSmallerThan(n) {
  * squareOrDouble(9) -> 81
  */
 function squareOrDouble(n) {
-  // Your code here
+  if (n % 2 === 1) {
+    return n * n;
+  } else {
+    return n * 2;
+  }
 }
 
 /**
@@ -64,7 +80,26 @@ function squareOrDouble(n) {
  *    ageFromCivilID(297111012345) -> 20
  */
 function ageFromCivilID(civilID) {
-  // Your code here
+  let gen;
+  let year;
+  let month;
+  let day;
+  gen = 17 + parseInt(civilID[0]);
+  let y1 = parseInt(civilID[1]);
+  let y2 = parseInt(civilID[2]);
+  year = `${gen}` + `${y1}` + `${y2}`;
+  let m1 = parseInt(civilID[3]);
+  let m2 = parseInt(civilID[4]);
+  month = `${m1}` + `${m2}`;
+  let d1 = parseInt(civilID[5]);
+  let d2 = parseInt(civilID[6]);
+  day = `${d1}` + `${d2}`;
+  var d = new Date();
+  resyear = d.getFullYear() - year;
+  if (month > d.getMonth()) {
+    resyear--;
+  }
+  return resyear;
 }
 
 /**
@@ -79,7 +114,11 @@ function ageFromCivilID(civilID) {
  *    - Is NOT a member of the royal family
  */
 function canVoteInKuwait(civilID, isKuwaiti, isRoyal) {
-  // Your code here
+  if (ageFromCivilID(civilID) > 21 && isKuwaiti === true && isRoyal === false) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = {
