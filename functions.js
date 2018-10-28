@@ -37,13 +37,8 @@ function isOdd(n) {
  * Hint: you can solve this without writing any loops!
  */
 function oddsSmallerThan(n) {
-  if (n % 2 === 1 && n != 1) {
-    return n - 2;
-  } else if (n === 1) {
-    return 0;
-  }
+  return Math.floor(n / 2);
 }
-
 /**
  * squareOrDouble(n):
  * - receives a number n
@@ -95,13 +90,13 @@ function ageFromCivilID(civilID) {
   let d2 = parseInt(civilID[6]);
   day = `${d1}` + `${d2}`;
   var d = new Date();
-  resyear = d.getFullYear() - year;
+  let resyear = d.getFullYear() - year;
   if (month > d.getMonth()) {
     resyear--;
   }
   return resyear;
 }
-
+ageFromCivilID("297111012345");
 /**
  * canVoteInKuwait(civilID, isKuwaiti, isRoyal):
  * - receives a civilID as a STRING
